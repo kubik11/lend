@@ -1,0 +1,47 @@
+@font-face {
+    font-family: PT_Sans; /* Имя шрифта */
+    src: url(fonts/PT_Sans/2221.woff); /* Путь к файлу со шрифтом */
+    src: url(fonts/PT_Sans/2221.otf);
+    src: url(fonts/PT_Sans/2221.eot);
+    font-weight: 400;
+   }
+@font-face {
+    font-family: PT_Sans; /* Имя шрифта */
+    src: url(fonts/PT_Sans/2223.woff); /* Путь к файлу со шрифтом */
+    src: url(fonts/PT_Sans/2223.otf);
+    src: url(fonts/PT_Sans/2223.eot);
+    font-weight: 600;
+   }
+@font-face {
+    font-family: Circe-Bold; /* Имя шрифта */
+    src: url(fonts/Circe-Bold/Circe-Bold/Circe-Bold.woff); /* Путь к файлу со шрифтом */
+    src: url(fonts/Circe-Bold/Circe-Bold/Circe-Bold.otf);
+    src: url(fonts/Circe-Bold/Circe-Bold/Circe-Bold.eot);
+    font-weight: 600;
+   }
+p{
+	margin: 0px;
+	padding: 0px;
+}
+h1,h2,h3,h4,h5{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	line-height: auto;
+	font-family: "Circe-Bold", sans-serif;
+	overflow-x: hidden;
+	opacity: 1;
+}
+.container{
+	max-width: 1178px;
+	position: relative;
+	margin: 0 auto;
+	}
+.container p {
+	padding: 0px 30px;
+}
