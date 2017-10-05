@@ -1,24 +1,29 @@
-@font-face {
-    font-family: PT_Sans; /* Имя шрифта */
-    src: url(fonts/PT_Sans/2221.woff); /* Путь к файлу со шрифтом */
-    src: url(fonts/PT_Sans/2221.otf);
-    src: url(fonts/PT_Sans/2221.eot);
-    font-weight: 400;
-   }
-@font-face {
-    font-family: PT_Sans; /* Имя шрифта */
-    src: url(fonts/PT_Sans/2223.woff); /* Путь к файлу со шрифтом */
-    src: url(fonts/PT_Sans/2223.otf);
-    src: url(fonts/PT_Sans/2223.eot);
-    font-weight: 600;
-   }
-@font-face {
-    font-family: Circe-Bold; /* Имя шрифта */
-    src: url(fonts/Circe-Bold/Circe-Bold/Circe-Bold.woff); /* Путь к файлу со шрифтом */
-    src: url(fonts/Circe-Bold/Circe-Bold/Circe-Bold.otf);
-    src: url(fonts/Circe-Bold/Circe-Bold/Circe-Bold.eot);
-    font-weight: 600;
-   }
+
+@font-face { 
+  font-family: 'PT_Sans';       /* название одно */ 
+  src: url('../fonts/PT_Sans/2221.woff'); /* разные файлы */ 
+  font-weight: 400;              /* разная плотность */ 
+  font-style: normal; 
+} 
+
+@font-face { 
+  font-family: 'PT_Sans';       /* название одно */ 
+  src: url('../fonts/PT_Sans/2223.woff'); /* разные файлы */ 
+  font-weight: 600;              /* разная плотность */ 
+  font-style: normal; 
+} 
+@font-face { 
+  font-family: 'Georgia';       /* название одно */ 
+  src: url('../fonts/Georgia/georgiai.woff'); /* разные файлы */ 
+  font-weight: 400;              /* разная плотность */ 
+  font-style: italic; 
+} 
+@font-face { 
+  font-family: 'Circe-Bold';       /* название одно */ 
+  src: url('../fonts/Circe-Bold/Circe-Bold/Circe-Bold.woff'); /* разные файлы */ 
+  font-weight: 600;              /* разная плотность */ 
+  font-style: normal; 
+}     
 p{
 	margin: 0px;
 	padding: 0px;
@@ -27,21 +32,333 @@ h1,h2,h3,h4,h5{
 	margin: 0px;
 	padding: 0px;
 }
-
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+.button{
+    padding: 22px 63px;
+    background-color: #ff621f;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'PT_Sans';
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    line-height: 0.8;
+}
+.button::after{
+    width: 100%;
+    height: 6px;
+    content: " ";
+    position: absolute;
+    bottom: -6px;
+    left: 0px;
+    background-color: #ff332a;
+}
 body{
 	font-size: 16px;
 	min-width: 320px;
 	position: relative;
 	line-height: auto;
-	font-family: "Circe-Bold", sans-serif;
+	//font-family: "Circe-Bold", sans-serif;
 	overflow-x: hidden;
 	opacity: 1;
+    margin: 0;
 }
 .container{
 	max-width: 1178px;
 	position: relative;
 	margin: 0 auto;
 	}
-.container p {
-	padding: 0px 30px;
+.logo{
+    display: inline-block;
+    margin: 40px auto 0px auto;
+}
+.logo a{
+    display: inline-block;
+}
+.logo img{
+    margin-top: 0px;
+}
+.logo p{
+    font-size: 27px;
+    font-family: 'PT_Sans';
+    font-weight: 400;
+    cff621folor: #18374b;
+    line-height: 0.8;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.wrap-logo{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.wrap-logo::after{
+    left: 50%;
+    bottom: 0;
+    display: block;
+    position: absolute;
+    content: "";
+    transform: translate(-50%);
+    width: 82%;
+    height: 1px;
+    background-color: #000;
+}
+.advertisment{
+    padding: 56px 100px 38px 100px;
+}
+.advertisment-inner{
+    text-align: center;
+}
+.advertisment-inner .button{
+    display: inline-block;
+}
+.advertisment-inner .h2{
+    color: #ff621f;
+    font-family: 'Circe-Bold';
+    font-weight: 600;
+    font-size: 34px;
+    text-transform: uppercase;
+    line-height: 0.8;
+}
+.advertisment-inner p{
+    color: #000;
+    font-family: 'Circe-Bold';
+    font-weight: 600;
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: auto;
+    padding: 40px 0px 20px 0px;
+}
+.speaker{
+    padding: 44px 90px;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+
+}
+.left-card{
+    flex: 0.5;
+    background-color: #ff621f;
+
+}
+.right-card{
+    flex: 0.5;
+    background-color: #eaeaea;
+}
+.left-card .photo-card{
+    text-align: center;
+}
+.left-card .photo-card .img{
+    border-radius: 50%;
+    border: 8px solid #fff;
+    width: 190px;
+    height: 190px;
+    background-position: -74px 0;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+.left-card .photo-card .position{
+    font-family: 'Georgia';  
+    font-style: italic;
+    font-weight: 400;
+    display: block;
+    color: #fff;
+    font-size: 22px;
+    line-height: 0.8;
+    margin-top: 25px;
+}
+.left-card .photo-card .name{
+    display: block;
+    font-family: 'PT_Sans';
+    font-style: normal;
+    font-weight: 600;
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+.left-card .date .date-inner-left, .left-card .date .date-inner-right{
+    display: inline-block;
+}
+.left-card .date .date-inner-left{
+    width: 127px;
+}
+.left-card .date .date-inner-right{
+    flex: 1;
+    padding-left: 30px;
+}
+.left-card .date .date-inner-left .date-monse{
+    display: block;
+    background-color: #2b2e35;
+    font-family: 'PT_Sans';
+    font-style: normal;
+    font-weight: 600;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+}
+.left-card .date{
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    padding: 37px 18px 50px 30px ;
+}
+.left-card .date .date-inner-left .date-number{
+    background-color: #eaeaea;
+    font-family: 'PT_Sans';
+    font-style: normal;
+    font-weight: 600;
+    color: #c2c2c2;
+    font-size: 73px;
+    line-height: 0.8;
+    padding: 20px 25px;
+}
+.left-card .date .date-inner-right p{
+    color: #fff;
+    font-family: 'Circe-Bold';
+    font-weight: 600;
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 0.8;
+    position: relative;
+}
+.left-card .date .date-inner-right p::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    border: 1px dashed #fff;
+}
+.left-card .date .date-inner-right span{
+    display: block;
+    color: #fff;
+    font-family: 'Circe-Bold';
+    font-weight: 600;
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 0.8;
+    padding-bottom: 14px;
+    margin: 17px 0px 20px 0px;
+}
+.left-card .date .date-inner-right .left-card-time{
+    font-family: 'PT_Sans';
+    font-style: normal;
+    font-weight: 400;
+    color: #fff;
+    font-size: 24px;
+    line-height: 0.8;
+}
+.speaker ul li{
+    font-family: 'PT_Sans';
+    font-style: normal;
+    font-weight: 400;
+    color: #fff;
+    font-size: 18px;
+    line-height: auto;
+    margin-bottom: 20px;
+}
+.speaker ul{
+    padding: 0px 50px 0px 83px;
+    margin: 40px 0px 0px 0px ;
+}
+// ===============================================Right side===========================//
+.speaker .right-card{
+  
+}
+.speaker .right-card .wrap-counter{
+    text-align: center;
+    padding: 35px 25px 0px 35px ;
+}
+.speaker .right-card .wrap-counter .h2{
+    font-family: 'PT_Sans';
+    font-style: normal;
+    font-weight: 400;
+    color: #000;
+    font-size: 21px;
+    line-height: 0.8;
+   // margin-bottom: 20px;
+   text-transform: uppercase;
+}
+.speaker .right-card .wrap-counter .wrap-numbers{
+    padding: 20px 0px 35px 0px;
+    display: inline-block;
+}
+.speaker .right-card .wrap-counter .wrap-numbers .num{
+    margin-right: 9px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Circe-Bold';
+    font-weight: 600;
+    color: #2b2e35;
+
+}
+.speaker .right-card .wrap-counter .wrap-numbers .num:last-child{
+    margin-right: 0px;
+}
+.speaker .right-card .wrap-counter .wrap-numbers .num span{
+    background-color: #2b2e35;
+    padding: 14px 22px;
+    line-height: 0.8;
+    display: block;
+    border-radius: 10px;
+    font-family: 'Circe-Bold';
+    font-weight: 600;
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.speaker .right-card .wrap-counter .h3{
+    font-family: 'PT_Sans';
+    font-style: normal;
+    font-weight: 600;
+    color: #2b2e35;
+    font-size: 24px;
+    line-height: auto;
+    text-transform: uppercase;
+    text-align: left;
+}
+.speaker .right-card .wrap-counter ul{
+    padding: 0px;
+    text-align: left;
+    margin-top: 70px
+}
+.speaker .right-card .wrap-counter ul>li{
+    list-style: none;
+    margin-bottom: 32px;
+}
+.speaker .right-card .wrap-counter ul>li:last-child{
+    margin-bottom: 56px;
+}
+.speaker .right-card .wrap-counter ul>li .fa{
+    color: #d80027;
+    font-size: 25px;
+    display: inline-block;
+    float: left;
+    margin-top: 3px;
+
+}
+.speaker .right-card .wrap-counter ul>li p{
+    font-family: 'PT_Sans';
+    font-style: normal;
+    font-weight: 400;
+    color: #404348;
+    font-size: 24px;
+    line-height: auto;
+    display: inline-block;
+    max-width: 438px;
+    text-align: left;
+    margin-left: 14px;
+}
+.speaker .right-card .wrap-counter ul li p span{
+    font-weight: 600;
+    color: #000;
 }

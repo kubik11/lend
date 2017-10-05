@@ -1,5 +1,5 @@
 {
-  "name": "testlanding-master",
+  "name": "gunter",
   "version": "1.0.0",
   "description": "my test project",
   "main": "index.js",
@@ -11,5 +11,19 @@
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp-autoprefixer": "^4.0.0"
-  }
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kubik11/lend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kubik11/lend/issues"
+  },
+  "homepage": "https://github.com/kubik11/lend#readme"
 }

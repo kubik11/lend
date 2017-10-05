@@ -1,6 +1,7 @@
-var gulp      = require('gulp'), // Подключаем Gulp
+var gulp      =   require('gulp'), // Подключаем Gulp
 	autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления п
-	browserSync = require('browser-sync'); // Подключаем Browser Sync
+    concat = require('gulp-concat'),
+    browserSync = require('browser-sync'); // Подключаем Browser Sync
 
 
 
@@ -8,22 +9,42 @@ var gulp      = require('gulp'), // Подключаем Gulp
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
     browserSync({ // Выполняем browserSync
         server: { // Определяем параметры сервера
-            baseDir: 'app' // Директория для сервера - app
+            baseDir: 'lend' // Директория для сервера - app
         },
         notify: false // Отключаем уведомления
     });
 });
 
 gulp.task('prefex', function(){
-	return gulp.src('css/*.css')
+	return gulp.src('lend/css/*.css')
 		   .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
 		   .pipe(gulp.dest('css')); // Выгружаем результата в папку app/css
 });
 
-gulp.task('watch', ['browser-sync', 'prefex'], function() {
-    gulp.watch('css/*.css', browserSync.reload); // Наблюдение за sass файлами в папке css
-    gulp.watch('*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch('js/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
+gulp.task('common-js', function() {
+    return gulp.src([
+        'lend/js/script.js',
+        ])
+    .pipe(concat('script.min.js'))
+    //.pipe(uglify())
+    .pipe(gulp.dest('lend/js'));
+});
+
+gulp.task('js', ['common-js'], function() {
+    return gulp.src([
+        'lend/libs/jquery/dist/jquery.min.js',
+        'lend/js/script.min.js', // Всегда в конце
+        ])
+    .pipe(concat('common.min.js'))
+    // .pipe(uglify()) // Минимизировать весь js (на выбор)
+    .pipe(gulp.dest('lend/js'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('watch', ['js', 'browser-sync'], function() {
+    gulp.watch('lend/css/*.css',  browserSync.reload);
+    gulp.watch(['libs/**/*.js', 'lend/js/script.js'], ['js']);
+    gulp.watch('lend/*.html', browserSync.reload);
 });
 
 gulp.task('default', ['watch']);
