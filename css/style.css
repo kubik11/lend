@@ -362,3 +362,47 @@ body{
     font-weight: 600;
     color: #000;
 }
+.article p{
+    font-family: 'Georgia'; 
+    font-size: 24px;
+    font-style: italic;
+    max-width: 580px;
+    margin: 0 auto;
+
+}
+.article .container{
+    text-align: center;
+}
+.article p span{
+     font-size: 30px;
+}
+.article .button::after{
+    height: 0px;
+}
+.article .button{
+    padding: 12px 40px ;
+    display: inline-block;
+    font-size: 36px;
+    margin-top: 45px;
+}
+.article p:last-child{
+    font-family: 'PT_Sans';
+    font-style: normal;
+    font-weight: 400;
+    color: #2b2e35;
+    font-size: 36px;
+    max-width: 920px;
+    margin-top: 25px;
+    line-height: auto;
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 41px;
+}
+.article p:last-child::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: -7%;
+    width: 114%;
+    border: 1px dashed #7a7b7e;
+}
